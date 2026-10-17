@@ -1,0 +1,5 @@
+<div class="heading" [class.heading--on-dark]="tone() === 'on-dark'">
+  <span class="heading__eyebrow">{{ eyebrow() }}</span>
+  <h2 class="heading__title">{{ title() }}</h2>
+  <p class="heading__text"><ng-content /></p>
+</div>

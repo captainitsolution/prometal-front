@@ -1,0 +1,32 @@
+<header class="header">
+  <div class="container header__inner">
+    <a class="header__logo" href="#inicio" (click)="closeMenu()">
+      <img src="images/brand/prometal-logo.webp" [alt]="siteName + ' - ir para o início'" width="184" height="40" />
+    </a>
+
+    <button
+      class="header__toggle"
+      type="button"
+      aria-controls="main-nav"
+      [attr.aria-expanded]="isMenuOpen()"
+      [attr.aria-label]="isMenuOpen() ? 'Fechar menu' : 'Abrir menu'"
+      (click)="toggleMenu()"
+    >
+      <app-icon [name]="isMenuOpen() ? 'close' : 'menu'" />
+    </button>
+
+    <nav id="main-nav" class="header__nav" [class.header__nav--open]="isMenuOpen()" aria-label="Navegação principal">
+      <ul class="header__links">
+        @for (link of navLinks; track link.href) {
+          <li>
+            <a class="header__link" [href]="link.href" (click)="closeMenu()">{{ link.label }}</a>
+          </li>
+        }
+      </ul>
+      <a class="btn btn--whatsapp header__cta" [href]="whatsappUrl" target="_blank" rel="noopener noreferrer">
+        <app-icon name="whatsapp" />
+        WhatsApp
+      </a>
+    </nav>
+  </div>
+</header>

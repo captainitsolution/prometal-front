@@ -1,0 +1,24 @@
+<section id="contato" class="section contact">
+  <div class="container">
+    <app-section-heading eyebrow="Fale com a gente" title="Contato" tone="on-dark">
+      O jeito mais rápido é o WhatsApp. Se preferir, é só ligar.
+    </app-section-heading>
+
+    <ul class="contact__list">
+      @for (channel of channels; track channel.id) {
+        <li>
+          <a
+            class="contact__item"
+            [href]="channel.href"
+            [attr.target]="channel.external ? '_blank' : null"
+            [attr.rel]="channel.external ? 'noopener noreferrer' : null"
+          >
+            <app-icon class="contact__icon" [name]="channel.icon" />
+            <span class="contact__label">{{ channel.label }}</span>
+            <span class="contact__value">{{ channel.value }}</span>
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

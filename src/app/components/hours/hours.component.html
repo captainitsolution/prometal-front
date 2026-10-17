@@ -1,0 +1,17 @@
+<section id="horario" class="section hours">
+  <div class="container">
+    <app-section-heading eyebrow="Atendimento" title="Horário de funcionamento" />
+
+    <dl class="hours__list">
+      @for (row of rows; track row.days) {
+        <div class="hours__row" [class.hours__row--closed]="!row.hours">
+          <dt class="hours__days">
+            <app-icon name="clock" />
+            {{ row.days }}
+          </dt>
+          <dd class="hours__time">{{ row.hours ?? 'Fechado' }}</dd>
+        </div>
+      }
+    </dl>
+  </div>
+</section>

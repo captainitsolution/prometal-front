@@ -1,0 +1,42 @@
+.hours {
+  padding-bottom: 0;
+
+  &__list {
+    display: grid;
+    max-width: 36rem;
+    margin: 0;
+    border-radius: var(--radius);
+    background: #fff;
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-5);
+
+    & + & {
+      border-top: 1px solid var(--color-silver-light);
+    }
+
+    &--closed {
+      color: var(--color-text-muted);
+    }
+  }
+
+  &__days {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 600;
+  }
+
+  &__time {
+    margin: 0;
+    font: 700 var(--text-xl) / 1 var(--font-display);
+  }
+}

@@ -1,0 +1,40 @@
+<section id="localizacao" class="section location">
+  <div class="container">
+    <app-section-heading eyebrow="Onde estamos" title="Localização">
+      Venha até a loja em Guaraná. Atendimento presencial, sem entregas.
+    </app-section-heading>
+
+    <div class="location__layout">
+      <div class="location__info">
+        <img
+          class="location__photo"
+          src="images/loja/fachada.webp"
+          alt="Fachada da loja Prometal Abrasivos e Metais, com letreiro preto e amarelo"
+          width="482"
+          height="438"
+          loading="lazy"
+        />
+        <address class="location__address">
+          <app-icon name="map-pin" />
+          <span>
+            {{ address.street }}<br />
+            {{ address.district }}, {{ address.city }} - {{ address.state }}<br />
+            CEP {{ address.zipCode }}
+          </span>
+        </address>
+        <a class="btn btn--dark location__cta" [href]="directionsUrl" target="_blank" rel="noopener noreferrer">
+          Como chegar
+          <app-icon name="arrow-right" />
+        </a>
+      </div>
+
+      <iframe
+        class="location__map"
+        title="Mapa com a localização da loja"
+        [src]="mapEmbedUrl"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>

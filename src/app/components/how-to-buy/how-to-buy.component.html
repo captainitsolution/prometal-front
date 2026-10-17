@@ -1,0 +1,23 @@
+<section id="como-comprar" class="section steps">
+  <div class="container">
+    <app-section-heading eyebrow="Passo a passo" title="Como comprar" tone="on-dark">
+      É simples e rápido. Você não precisa de cadastro.
+    </app-section-heading>
+
+    <ol class="steps__list">
+      @for (step of steps; track step.title; let i = $index) {
+        <li class="steps__item">
+          <span class="steps__number" aria-hidden="true">{{ i + 1 }}</span>
+          <app-icon class="steps__icon" [name]="step.icon" />
+          <h3 class="steps__title">{{ step.title }}</h3>
+          <p class="steps__text">{{ step.text }}</p>
+        </li>
+      }
+    </ol>
+
+    <a class="btn btn--whatsapp steps__cta" [href]="whatsappUrl" target="_blank" rel="noopener noreferrer">
+      <app-icon name="whatsapp" />
+      Começar pelo WhatsApp
+    </a>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+<section id="produtos" class="section categories">
+  <div class="container">
+    <app-section-heading eyebrow="Produtos" title="O que você encontra na Prometal">
+      Toque em uma categoria para ver exemplos e pedir orçamento.
+    </app-section-heading>
+
+    <ul class="categories__grid">
+      @for (category of categories; track category.id) {
+        <li>
+          <button class="categories__card" type="button" (click)="open(category)">
+            <span class="categories__icon"><app-icon [name]="category.icon" /></span>
+            <span class="categories__name">{{ category.name }}</span>
+            <span class="categories__summary">{{ category.summary }}</span>
+            <span class="categories__more">
+              Ver exemplos
+              <app-icon name="arrow-right" />
+            </span>
+          </button>
+        </li>
+      }
+    </ul>
+  </div>
+
+  <app-category-dialog [category]="selectedCategory()" (closed)="close()" />
+</section>
