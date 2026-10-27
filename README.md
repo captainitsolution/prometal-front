@@ -123,7 +123,7 @@ Sem esse ajuste, o deploy sai como *Preview* e o endereço principal não atuali
 - [ ] **E-mail de contato:** não informado; a seção de contato fica sem ele.
 - [ ] **Formas de pagamento:** não confirmadas; não são exibidas.
 - [ ] **CNPJ e razão social do rodapé:** vieram de consulta pública; confirmar com o cliente.
-- [ ] **Fotos:** só a fachada está no site; faltam fotos do interior e dos produtos (não usar imagens do Instagram sem autorização).
+- [ ] **Fotos:** o site usa a fachada (`images/loja/fachada.webp`) e uma foto de atendente na entrada (`images/loja/equipe-na-entrada.webp`, no banner). Confirmar com a loja a autorização de uso da imagem da pessoa. A etiqueta na máscara de solda aparece pequena na foto e mostra um preço: se a loja não quiser isso, trocar a foto. Faltam fotos do interior e dos produtos (não usar imagens do Instagram sem autorização).
 - [ ] **Logo vetorial** (para versão em fundo claro e SVG).
 - [ ] **Domínio .com.br** (a configurar depois), com:
   - `<link rel="canonical">` e `og:url` no `src/index.html`

@@ -1,24 +1,28 @@
 <section id="inicio" class="hero">
-  <div class="container hero__inner">
-    <p class="hero__place">
-      <app-icon name="map-pin" />
-      {{ city }}
-    </p>
-    <h1 class="hero__title">Abrasivos, metais e ferramentas <span>para o seu trabalho render mais</span></h1>
-    <p class="hero__text">Parafusos, chapas, ferramentas, EPIs e muito mais. Chame no WhatsApp e peça seu orçamento.</p>
-    <div class="hero__actions">
-      <a class="btn btn--whatsapp hero__cta" [href]="whatsappUrl" target="_blank" rel="noopener noreferrer">
-        <app-icon name="whatsapp" />
-        Peça seu orçamento no WhatsApp
-      </a>
-      <a class="btn btn--outline-light hero__cta" [href]="phoneUrl">
-        <app-icon name="phone" />
-        Ligar {{ phoneDisplay }}
-      </a>
+  <div class="container hero__layout">
+    <div class="hero__inner">
+      <p class="hero__place">
+        <app-icon name="map-pin" />
+        {{ city }}
+      </p>
+      <h1 class="hero__title">Abrasivos, metais e ferramentas <span>para o seu trabalho render mais</span></h1>
+      <p class="hero__text">Parafusos, chapas, ferramentas, EPIs e muito mais. Chame no WhatsApp e peça seu orçamento.</p>
+      <div class="hero__actions">
+        <a class="btn btn--whatsapp hero__cta" [href]="whatsappUrl" target="_blank" rel="noopener noreferrer">
+          <app-icon name="whatsapp" />
+          Peça seu orçamento no WhatsApp
+        </a>
+        <a class="btn btn--outline-light hero__cta" [href]="phoneUrl">
+          <app-icon name="phone" />
+          Ligar {{ phoneDisplay }}
+        </a>
+      </div>
+      <p class="hero__hours">
+        <app-icon name="clock" />
+        Segunda a sexta, das 07:00 às 17:20
+      </p>
     </div>
-    <p class="hero__hours">
-      <app-icon name="clock" />
-      Segunda a sexta, das 07:00 às 17:20
-    </p>
+
+    <app-hero-carousel />
   </div>
 </section>

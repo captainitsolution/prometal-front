@@ -1,0 +1,111 @@
+:host {
+  display: block;
+}
+
+.carousel {
+  position: relative;
+  aspect-ratio: 1;
+  border: 3px solid var(--color-amber);
+  border-radius: var(--radius);
+  background: var(--color-black);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+
+  &__slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+
+    &--active {
+      opacity: 1;
+    }
+  }
+
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(24px) brightness(0.55);
+    transform: scale(1.15);
+  }
+
+  &__photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    display: inline-flex;
+    padding: var(--space-2);
+    border: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    font-size: 1.75rem;
+    cursor: pointer;
+    transform: translateY(-50%);
+
+    &:hover {
+      background: var(--color-amber);
+      color: var(--color-black);
+    }
+
+    &--prev {
+      left: var(--space-2);
+    }
+
+    &--next {
+      right: var(--space-2);
+    }
+  }
+
+  &__dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: var(--space-3);
+    display: flex;
+    justify-content: center;
+    gap: var(--space-1);
+  }
+
+  /* Área de toque de 2rem, com o ponto visível desenhado por ::before. */
+  &__dot {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      width: 0.75rem;
+      height: 0.75rem;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    &--active::before {
+      border-color: var(--color-amber);
+      background: var(--color-amber);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel__slide {
+    transition: none;
+  }
+}

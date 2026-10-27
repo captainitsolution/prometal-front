@@ -2,6 +2,8 @@ export type IconName =
   | 'arrow-right'
   | 'bolt'
   | 'check'
+  | 'chevron-left'
+  | 'chevron-right'
   | 'clock'
   | 'close'
   | 'cog'

@@ -1,0 +1,48 @@
+<div
+  class="carousel"
+  role="group"
+  aria-roledescription="carrossel"
+  aria-label="Fotos da loja"
+  (mouseenter)="setPaused(true)"
+  (mouseleave)="setPaused(false)"
+  (focusin)="setPaused(true)"
+  (focusout)="setPaused(false)"
+>
+  @for (slide of slides; track slide.src; let i = $index) {
+    <div class="carousel__slide" [class.carousel__slide--active]="i === current()" [attr.aria-hidden]="i === current() ? null : 'true'">
+      <!-- Fundo desfocado da própria foto: preenche as laterais sem cortar a imagem principal. -->
+      <img class="carousel__backdrop" [src]="slide.src" alt="" aria-hidden="true" loading="lazy" />
+      <img
+        class="carousel__photo"
+        [src]="slide.src"
+        [alt]="slide.alt"
+        [width]="slide.width"
+        [height]="slide.height"
+        [attr.loading]="i === 0 ? null : 'lazy'"
+        [attr.fetchpriority]="i === 0 ? 'high' : null"
+      />
+    </div>
+  }
+
+  @if (slides.length > 1) {
+    <button class="carousel__arrow carousel__arrow--prev" type="button" aria-label="Foto anterior" (click)="previous()">
+      <app-icon name="chevron-left" />
+    </button>
+    <button class="carousel__arrow carousel__arrow--next" type="button" aria-label="Próxima foto" (click)="next()">
+      <app-icon name="chevron-right" />
+    </button>
+
+    <div class="carousel__dots">
+      @for (slide of slides; track slide.src; let i = $index) {
+        <button
+          class="carousel__dot"
+          type="button"
+          [class.carousel__dot--active]="i === current()"
+          [attr.aria-current]="i === current() ? 'true' : null"
+          [attr.aria-label]="'Ir para a foto ' + (i + 1)"
+          (click)="goTo(i)"
+        ></button>
+      }
+    </div>
+  }
+</div>
